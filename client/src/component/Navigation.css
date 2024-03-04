@@ -1,0 +1,91 @@
+a {
+  text-decoration: none; /* Corrected from 'no' to 'none' */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 10px 20px;
+    z-index: 10; /* Higher than the video */
+}
+.navbar-booking {
+  display: flex;
+
+  padding-right: 54px;
+  align-items: center;
+  gap: 1px; /* Adjust the gap between buttons as needed */
+  min-width: 220px; /* Adjust this value as needed */
+}
+
+.navbar-logo img {
+    height: 50px; /* Adjust size as needed */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0 21px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+    color: #CA8E46;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0 21px;
+}
+
+
+.navbar-booking button {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgb(255, 165, 0);
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+  border: 1px solid transparent; /* Adjust border as needed */
+  border-radius: 10px;
+  line-height: 1; /* Adjust line height for text inside the button */
+  margin: 0 5px; /* Example: Ensure reasonable margins */
+  padding: 2px 6px; 
+  cursor: pointer;
+  font-size: 0.8em;  /* Smaller font size */
+  min-height: 0; /* Remove minimum height if it's set */
+  min-width: 0; /* Remove minimum width if it's set */
+
+  /* Other styles... */
+}
+.navbar-booking   .booking-my{
+    color: white;
+    background: none;
+    border-radius: none;
+}
+
+
+.btn-text {
+  position: relative;
+  top: 2px; /* Adjust this value as needed to lower the text */
+}
+
+.user-icon {
+  height: 30px; /* Increase the size as needed */
+  width: 30px; /* Increase the size as needed */
+  object-fit: cover; 
+  margin-right: 6px;
+}
+
+
