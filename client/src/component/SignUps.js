@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Signups.css';
 import signinlogo from '../images/resort.png';
@@ -12,8 +12,6 @@ const Signups = () => {
     const [mobileNumber, setMobileNumber] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-
-
 
     useEffect(() => {
         const inputs = document.querySelectorAll('.signup-input');
@@ -30,7 +28,6 @@ const Signups = () => {
             return;
         }
 
-        // Mobile number validation (starts with 6, 7, 8, or 9 and is 10 digits long)
         const mobileRegex = /^[6-9]\d{9}$/;
         if (!mobileRegex.test(mobileNumber)) {
             setErrorMessage('Mobile number must start with 6, 7, 8, or 9 and be 10 digits long');
@@ -39,27 +36,27 @@ const Signups = () => {
 
         try {
             const response = await axios.post('http://localhost:5000/api/signup', {
-              name, email, password, mobileNumber
+                name, email, password, mobileNumber
             });
             console.log(response.data.message);
             setShowSuccessPopup(true);
-          } catch (error) {
+        } catch (error) {
             console.error('Signup failed:', error);
             setErrorMessage('Signup failed, please try again');
-          }
-        };
+        }
+    };
     const handlePopupOk = () => {
         setShowSuccessPopup(false);
         navigate('/login');
     };
-    
+
 
     return (
         <div className="signup-container">
             <div className="signup-card">
                 <div className="signup-logo-container">
                     <img
-                        src={signinlogo}    
+                        src={signinlogo}
                         alt="Hotel Logo"
                         className="signup-logo"
                     />
@@ -99,11 +96,11 @@ const Signups = () => {
                 </form>
             </div>
             {showSuccessPopup && (
-        <div className="success-popup">
-            <p>You are successfully signed up!</p>
-            <button onClick={handlePopupOk}>OK</button>
-        </div>
-    )}
+                <div className="success-popup">
+                    <p>You are successfully signed up!</p>
+                    <button onClick={handlePopupOk}>OK</button>
+                </div>
+            )}
         </div>
     );
 };

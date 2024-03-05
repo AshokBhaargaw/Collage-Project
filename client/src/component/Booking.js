@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import bgbooking from "../images/bgbooking.jpg";
 import DatePicker from "react-datepicker";
 import { useNavigate } from "react-router-dom";
-
 import "react-datepicker/dist/react-datepicker.css";
 import "./Booking.css";
 import Navigation from "./Navigation";
@@ -16,6 +15,7 @@ const Booking = () => {
   const [endDate, setEndDate] = useState(null);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
+  
   useEffect(() => {
     const savedFormData = sessionStorage.getItem("bookingFormData");
     if (savedFormData) {
@@ -61,7 +61,7 @@ const Booking = () => {
   };
 
   const handleRoomChange = (event) => {
-    const newSelectedRoom = event.target.value || "Standard Room"; // Set to 'Standard Room' if empty
+    const newSelectedRoom = event.target.value || "Standard Room"; 
     setSelectedRoom(newSelectedRoom);
   };
 
@@ -107,10 +107,6 @@ const Booking = () => {
     return phone.match(/^[6789]\d{9}$/);
   };
 
-  // const performFormSubmission = () => {
-  //   console.log('Form submitted:', formData);
-  //   // Proceed with form submission logic
-  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -124,6 +120,7 @@ const Booking = () => {
       timeSlot: "",
     });
 
+    
     // Validation checks
     let hasError = false;
 
@@ -197,6 +194,8 @@ const Booking = () => {
     }
   };
 
+
+  
   return (
 
     <div className="booking-container">

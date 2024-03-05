@@ -24,15 +24,12 @@ const Payment = () => {
     };
 
   const generateBookingId = () => {
-    // Generate a string of random alphanumeric characters
     let randomString = Math.random().toString(36).substring(2, 8);
     
-    // Ensure the string is exactly 6 characters long
     while (randomString.length < 6) {
       randomString += Math.random().toString(36).substring(2, 8);
     }
   
-    // Use only the first 6 characters
     randomString = randomString.substring(0, 6);
   
     return `${randomString.toUpperCase()}`;

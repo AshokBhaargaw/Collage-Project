@@ -50,7 +50,6 @@ function App() {
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/admin" element={<AdminLogin />} />
             <Route exact path="/admindashboard" element={<AdminPage />} />
-
             <Route exact path="/successfull" element={<ErrorPage />} />
             <Route exact path="/success" element={<SuccessPage />} />
             <Route exact path="/my-booking" element={<MyBooking />} />

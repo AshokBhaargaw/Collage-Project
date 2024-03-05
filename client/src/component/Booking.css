@@ -39,9 +39,9 @@
   .react-datepicker {
       
     background-color: transparent !important;
+    width: auto; 
+    font-size: 1.2em;
     
-    width: auto; /* Adjust the width as needed */
-    font-size: 1.2em; /* Adjust the width as needed */
 }
 
 .react-datepicker,
